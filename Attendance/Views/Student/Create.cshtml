@@ -1,0 +1,42 @@
+﻿@model Student
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowStudentForm</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-4">
+
+    <form method="post" enctype="multipart/form-data">
+        <label asp-for="Name"></label>  <input asp-for="Name" /> <span asp-validation-for="Name" class="text-danger"></span><br>
+        <label asp-for="Age"></label> <input asp-for="Age" /><span asp-validation-for="Age" class="text-danger"></span><br>
+        <label asp-for="Email"></label> <input asp-for="Email" /><span asp-validation-for="Email" class="text-danger"></span><br>
+
+        <label asp-for="Password"></label> <input asp-for="Password" /><span asp-validation-for="Password" class="text-danger"></span><br>
+        <label asp-for="CPassword"></label> <input asp-for="CPassword" /><span asp-validation-for="CPassword" class="text-danger"></span><br>
+
+        <label asp-for="ImageFile"></label> <input asp-for="ImageFile" /><br>
+
+        <label asp-for="DeptId"></label> <select asp-for="DeptId" asp-items="@ViewBag.deptlist">
+        </select><span asp-validation-for="DeptId"></span><br>
+        <br />
+                <input type="submit" value="add student" class="btn btn-primary" />
+
+
+        <partial name="_ValidationScriptsPartial" />
+
+
+    </form>
+    </div>
+    </div>
+
+</body>
+</html>

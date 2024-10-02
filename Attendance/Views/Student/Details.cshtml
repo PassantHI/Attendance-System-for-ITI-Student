@@ -1,0 +1,53 @@
+﻿
+@model Attendance.Models.Student
+
+
+
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <img src="/images/@Model.ImageName" width="200" />
+
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+       
+        
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Department)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Department.DeptName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="TakeAttendance" asp-route-id="@Model.Id" class="btn btn-info">Attendance</a> |
+    <a asp-action="StudentCardAC" asp-route-id="@Model.Id" class="btn btn-info">Student Card</a> |
+
+    <a asp-action="Index" class="btn btn-light">Back to List</a>
+</div>

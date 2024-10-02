@@ -1,0 +1,40 @@
+﻿@model AttendanceTable
+
+@if(ViewBag.Message!=null)
+{
+    <h2 class="alert-info">@ViewBag.Message</h2>
+    <a asp-action="Details" asp-controller="Student" asp-route-id="@Model.StdId" class="btn btn-dark">Back</a>
+
+
+}
+else
+{
+
+
+    <form method="post">
+        <label>Record Your Attendance </label><br />
+        <br />
+        <input type="hidden" asp-for="StdId" />
+        <input asp-for="IsPresent" type="submit" value="Is Present" class="btn btn-info" />
+
+
+
+
+    </form>
+    <a asp-action="Details" asp-controller="Student" asp-route-id="@Model.StdId" class="btn btn-dark">Back</a>
+
+
+
+}
+
+@* <form method="post">
+    <label>Record Your Attendance </label><br />
+    <br />
+    <input type="hidden" asp-for="StdId" />
+    <input asp-for="IsPresent" type="submit" value="Is Present" class="btn btn-info" />
+
+
+
+
+</form>
+<a asp-action="Details" asp-controller="Student" asp-route-id="@Model.StdId" class="btn-dark">Back</a> *@

@@ -1,0 +1,52 @@
+﻿@model VerifyStudent
+@if (ViewBag.Message == "success")
+{
+    <h1 class="alert-success">Please Wait To Verify Your Account</h1>
+}
+
+@if (ViewBag.Message == "exist")
+{
+    <h1 class="alert-danger">You Already Registered Before</h1>
+}
+@{
+   
+}
+
+
+
+    <h2>You Are New User Please Register</h2>
+    <br />
+    <br />
+    <form method="post" enctype="multipart/form-data">
+        <label asp-for="Name"></label>  <input asp-for="Name" /> <span asp-validation-for="Name" class="text-danger"></span><br>
+    <br>
+        
+    <label asp-for="Age"></label> <input asp-for="Age" /><span asp-validation-for="Age" class="text-danger"></span><br>
+    <br>
+    <label asp-for="Email"></label> <input asp-for="Email" /><span asp-validation-for="Email" class="text-danger"></span><br>
+    <br>
+        
+    <label asp-for="Password"></label> <input asp-for="Password" /><span asp-validation-for="Password" class="text-danger"></span><br>
+    <br>
+    <label asp-for="CPassword"></label> <input asp-for="CPassword" /><span asp-validation-for="CPassword" class="text-danger"></span><br>
+    <br>
+        <label asp-for="ImageFile"></label> <input asp-for="ImageFile" /><br>
+    <br>
+       
+    <label asp-for="DeptId"></label> <select asp-for="DeptId" asp-items="@ViewBag.deptlist">
+        <br>
+    
+    </select><span asp-validation-for="DeptId"></span><br>
+    
+    <br>
+    <br>
+    <input type="submit" value="Register" />
+
+
+        <partial name="_ValidationScriptsPartial" />
+
+
+    </form>
+<br>
+    <a asp-controller="Account" asp-action="Login">Already have account</a>
+
